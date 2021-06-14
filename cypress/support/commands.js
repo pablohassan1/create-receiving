@@ -11,7 +11,7 @@ Cypress.Commands.add("getToken", (email, password) => {
 
 Cypress.Commands.add("logout", (email, password) => {
   return cy.getToken(email, password).then((tok) => {
-    cy.request("POST", "api/v1/users/logout", {
+    cy.request("POST", "/api/v1/users/logout", {
       token: tok,
     });
   });
